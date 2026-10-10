@@ -1,0 +1,115 @@
+{
+  "numeric_features": {
+    "INT_SQFT": {
+      "type": "int",
+      "min": 500,
+      "max": 2500,
+      "description": "Interior square footage"
+    },
+    "DIST_MAINROAD": {
+      "type": "int",
+      "min": 0,
+      "max": 200,
+      "description": "Distance to main road (meters)"
+    },
+    "N_BEDROOM": {
+      "type": "int",
+      "min": 1,
+      "max": 4,
+      "description": "Number of bedrooms"
+    },
+    "N_BATHROOM": {
+      "type": "int",
+      "min": 1,
+      "max": 2,
+      "description": "Number of bathrooms"
+    },
+    "N_ROOM": {
+      "type": "int",
+      "min": 2,
+      "max": 6,
+      "description": "Total rooms"
+    }
+  },
+  "categorical_features": {
+    "AREA": {
+      "type": "category",
+      "allowed": [
+        "Adyar",
+        "Anna Nagar",
+        "Chrompet",
+        "KK Nagar",
+        "Karapakkam",
+        "T Nagar",
+        "Velachery"
+      ],
+      "description": "Locality in Chennai"
+    },
+    "SALE_COND": {
+      "type": "category",
+      "allowed": [
+        "AbNormal",
+        "AdjLand",
+        "Family",
+        "Normal Sale",
+        "Partial"
+      ],
+      "description": "Transaction sale condition"
+    },
+    "PARK_FACIL": {
+      "type": "category",
+      "allowed": [
+        "Yes",
+        "No"
+      ],
+      "description": "Parking facility available"
+    },
+    "BUILDTYPE": {
+      "type": "category",
+      "allowed": [
+        "Commercial",
+        "House",
+        "Others"
+      ],
+      "description": "Building classification"
+    },
+    "UTILITY_AVAIL": {
+      "type": "category",
+      "allowed": [
+        "AllPub",
+        "ELO",
+        "NoSeWa",
+        "NoSewr"
+      ],
+      "description": "Available utilities"
+    },
+    "STREET": {
+      "type": "category",
+      "allowed": [
+        "Gravel",
+        "No Access",
+        "Paved"
+      ],
+      "description": "Street approach type"
+    },
+    "MZZONE": {
+      "type": "category",
+      "allowed": [
+        "A",
+        "C",
+        "I",
+        "RH",
+        "RL",
+        "RM"
+      ],
+      "description": "Municipal Zoning code"
+    }
+  },
+  "target": {
+    "name": "SALES_PRICE",
+    "unit": "INR",
+    "min_dataset": 2156875.0,
+    "max_dataset": 23667340.0,
+    "median_dataset": 10335050.0
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "selected_model": "HistGradientBoosting",
+  "candidate_benchmarks": {
+    "Dummy (Mean Baseline)": {
+      "train": {
+        "r2": 0.0,
+        "mae": 2972002.18,
+        "rmse": 3803094.11,
+        "mape": 31.66
+      },
+      "test": {
+        "r2": -0.001,
+        "mae": 2846743.28,
+        "rmse": 3626375.01,
+        "mape": 30.76
+      }
+    },
+    "Linear Regression": {
+      "train": {
+        "r2": 0.9546,
+        "mae": 617231.45,
+        "rmse": 810700.11,
+        "mape": 6.17
+      },
+      "test": {
+        "r2": 0.9521,
+        "mae": 607332.88,
+        "rmse": 793321.97,
+        "mape": 6.07
+      }
+    },
+    "Ridge Regression": {
+      "train": {
+        "r2": 0.9546,
+        "mae": 616753.27,
+        "rmse": 810740.61,
+        "mape": 6.15
+      },
+      "test": {
+        "r2": 0.9521,
+        "mae": 606619.88,
+        "rmse": 793057.43,
+        "mape": 6.05
+      }
+    },
+    "Random Forest": {
+      "train": {
+        "r2": 0.9972,
+        "mae": 154724.61,
+        "rmse": 202534.57,
+        "mape": 1.66
+      },
+      "test": {
+        "r2": 0.9783,
+        "mae": 416708.12,
+        "rmse": 534380.4,
+        "mape": 4.49
+      }
+    },
+    "Gradient Boosting": {
+      "train": {
+        "r2": 0.9868,
+        "mae": 337159.72,
+        "rmse": 436847.18,
+        "mape": 3.49
+      },
+      "test": {
+        "r2": 0.9846,
+        "mae": 345189.0,
+        "rmse": 449080.36,
+        "mape": 3.61
+      }
+    },
+    "HistGradientBoosting": {
+      "train": {
+        "r2": 0.9958,
+        "mae": 199697.14,
+        "rmse": 247680.76,
+        "mape": 2.09
+      },
+      "test": {
+        "r2": 0.9931,
+        "mae": 242729.46,
+        "rmse": 300165.29,
+        "mape": 2.55
+      }
+    }
+  },
+  "k_fold_cross_validation_5_fold": {
+    "r2_scores": [
+      0.9931,
+      0.9936,
+      0.9924,
+      0.993,
+      0.9941
+    ],
+    "r2_mean": 0.9933,
+    "r2_std": 0.0006,
+    "mae_mean": 247009.76,
+    "mae_std": 5988.32
+  },
+  "leave_one_locality_out_validation": {
+    "Adyar": {
+      "test_records": 774,
+      "r2": 0.9404,
+      "mae": 478590.17
+    },
+    "Anna Nagar": {
+      "test_records": 788,
+      "r2": 0.1491,
+      "mae": 3029965.3
+    },
+    "Chrompet": {
+      "test_records": 1702,
+      "r2": 0.95,
+      "mae": 405156.52
+    },
+    "KK Nagar": {
+      "test_records": 997,
+      "r2": 0.6081,
+      "mae": 1431487.66
+    },
+    "Karapakkam": {
+      "test_records": 1366,
+      "r2": -0.3885,
+      "mae": 2468430.94
+    },
+    "T Nagar": {
+      "test_records": 501,
+      "r2": 0.0401,
+      "mae": 3342048.32
+    },
+    "Velachery": {
+      "test_records": 981,
+      "r2": -0.5827,
+      "mae": 3311936.64
+    }
+  },
+  "residual_analysis": {
+    "mean_residual": -6732.3,
+    "median_residual": -9303.56,
+    "std_residual": 300195.35,
+    "min_residual_overprediction": -895438.39,
+    "max_residual_underprediction": 1020065.67,
+    "skewness": 0.1104,
+    "kurtosis": -0.1432
+  },
+  "high_r2_investigation_note": "The dataset exhibits high R2 (0.993) because the target SALES_PRICE is governed by an underlying structured formula: INT_SQFT * BaseRate(AREA, MZZONE) * TypeMultiplier(BUILDTYPE) with small amenity increments. HistGradientBoosting captures these multiplicative non-linearities with high fidelity. However, the Leave-One-Locality-Out test shows that R2 drops severely if an unseen locality is supplied, proving the model depends on known locality anchors."
+}
